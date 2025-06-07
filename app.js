@@ -14,6 +14,7 @@ fs.readFile("database/user.json", "utf8", (err, data) => {
 
 // MongoDB call
 const db = require("./server").db();
+const mongodb = require("mongodb");
 
 // 1: Entry code  
 app.use(express.static("public"));

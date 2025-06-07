@@ -1,6 +1,45 @@
 console.log("TRAIN AREA!");
 console.log("***************");
 
+// B - TASK
+// Masalani izohi: Shunday function tuzing, u 1ta string parametrga ega bolsin, hamda osha stringda qatnashgan raqamlarni sonini bizga return qilsin.
+// Masalan: countDigits("khizar1ab3khu13na07zarov6") 7ni return qiladi.
+
+// Masalani yechimi: 
+
+function countDigits(str) {
+  let count = 0;
+  for (let i = 0; i < str.length; i++) {
+    if (str[i] >= '0' && str[i] <= '9') {
+      count++;
+    }
+  }
+  return count;
+}
+
+console.log(countDigits("khizar1ab3khu13na07zarov6"));
+
+
+
+// A - TASK
+/* Masalani izohi:
+Shunday 2 parametrli function tuzing, hamda 1-parametrdagi letterni, 2-parametrdagi word qatnashgan sonini return qilishi kerak. MASALAN: countLetter("e", "engineer") 3 sonini return qiladi.
+*/
+
+// Masalani yechimi:
+
+// function countLetter(letter, word) {
+//    let count = 0;
+//    for(let i = 0; i < word.length; i++) {
+//        if (word[i] === letter) {
+//            count++;
+//        }
+//    }
+//    return count;
+// }
+//const result = countLetter("e", "engineer");
+// console.log("result:", result);
+
 
 
 // console.log("Jack Ma maslahatlari");
@@ -130,44 +169,6 @@ console.log("***************");
 //    console.log(javob);
 // }
 // run();
-
-// A - TASK
-/* Masalani izohi:
-Shunday 2 parametrli function tuzing, hamda 1-parametrdagi letterni, 2-parametrdagi word qatnashgan sonini return qilishi kerak. MASALAN: countLetter("e", "engineer") 3 sonini return qiladi.
-*/
-
-// Masalani yechimi:
-
-// function countLetter(letter, word) {
-//    let count = 0;
-//    for(let i = 0; i < word.length; i++) {
-//        if (word[i] === letter) {
-//            count++;
-//        }
-//    }
-//    return count;
-// }
-//const result = countLetter("e", "engineer");
-// console.log("result:", result);
-
-// B - TASK
-// Masalani izohi: Shunday function tuzing, u 1ta string parametrga ega bolsin, hamda osha stringda qatnashgan raqamlarni sonini bizga return qilsin.
-// Masalan: countDigits("ad2a54y79wet0sfgb9") 7ni return qiladi.
-
-// Masalani yechimi: 
-
-function countDigits(str) {
-  let count = 0;
-  for (let i = 0; i < str.length; i++) {
-    if (str[i] >= '0' && str[i] <= '9') {
-      count++;
-    }
-  }
-  return count;
-}
-
-console.log(countDigits("ad2a54y79wet0sfgb9"));
-
 
 // console.log("EXECUTE");
 //  ⭐️ Asynchronous: CALLBACK, ASYNC && PROMISE
