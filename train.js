@@ -138,14 +138,35 @@ Shunday 2 parametrli function tuzing, hamda 1-parametrdagi letterni, 2-parametrd
 
 // Masalani yechimi:
 
-function countLetter(letter, word) {
-    let count = 0;
-    for(let i = 0; i < word.length; i++) {
-        if (word[i] === letter) {
-            count++;
-        }
-    }
-    return count;
+// function countLetter(letter, word) {
+//    let count = 0;
+//    for(let i = 0; i < word.length; i++) {
+//        if (word[i] === letter) {
+//            count++;
+//        }
+//    }
+//    return count;
+// }
+//const result = countLetter("e", "engineer");
+// console.log("result:", result);
+
+console.log("EXECUTE");
+//  ⭐️ Asynchronous: CALLBACK, ASYNC && PROMISE
+
+// DEFINE
+function qoldiqliBolish(a, b, callback) {
+  if (b === 0) {
+    callback("Mahraj nolga teng bololmaydi", null);
+  } else {
+    callback(null, a % b);
+  }
 }
-const result = countLetter("e", "engineer");
-console.log("result:", result);
+
+// CALL
+qoldiqliBolish(10, 6, (err, data) => {
+  if (err) {
+    console.log("Error:", err);
+  } else {
+    console.log("Data:", data);
+  }
+});
