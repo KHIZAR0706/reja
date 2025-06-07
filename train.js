@@ -131,7 +131,7 @@ console.log("***************");
 // }
 // run();
 
-// A-TASK
+// A - TASK
 /* Masalani izohi:
 Shunday 2 parametrli function tuzing, hamda 1-parametrdagi letterni, 2-parametrdagi word qatnashgan sonini return qilishi kerak. MASALAN: countLetter("e", "engineer") 3 sonini return qiladi.
 */
@@ -150,23 +150,42 @@ Shunday 2 parametrli function tuzing, hamda 1-parametrdagi letterni, 2-parametrd
 //const result = countLetter("e", "engineer");
 // console.log("result:", result);
 
-console.log("EXECUTE");
+// B - TASK
+// Masalani izohi: Shunday function tuzing, u 1ta string parametrga ega bolsin, hamda osha stringda qatnashgan raqamlarni sonini bizga return qilsin.
+// Masalan: countDigits("ad2a54y79wet0sfgb9") 7ni return qiladi.
+
+// Masalani yechimi: 
+
+function countDigits(str) {
+  let count = 0;
+  for (let i = 0; i < str.length; i++) {
+    if (str[i] >= '0' && str[i] <= '9') {
+      count++;
+    }
+  }
+  return count;
+}
+
+console.log(countDigits("ad2a54y79wet0sfgb9"));
+
+
+// console.log("EXECUTE");
 //  ⭐️ Asynchronous: CALLBACK, ASYNC && PROMISE
 
 // DEFINE
-function qoldiqliBolish(a, b, callback) {
-  if (b === 0) {
-    callback("Mahraj nolga teng bololmaydi", null);
-  } else {
-    callback(null, a % b);
-  }
-}
+// function qoldiqliBolish(a, b, callback) {
+//  if (b === 0) {
+//    callback("Mahraj nolga teng bololmaydi", null);
+//  } else {
+//    callback(null, a % b);
+//  }
+// }
 
 // CALL
-qoldiqliBolish(10, 6, (err, data) => {
-  if (err) {
-    console.log("Error:", err);
-  } else {
-    console.log("Data:", data);
-  }
-});
+// qoldiqliBolish(10, 6, (err, data) => {
+//  if (err) {
+//    console.log("Error:", err);
+//  } else {
+//    console.log("Data:", data);
+//  }
+// });

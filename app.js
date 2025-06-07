@@ -35,16 +35,35 @@ app.set("view engine", "ejs");
 // });
 
 app.post("/create-item", (req, res) => {    // POST => Malumotni ozi bilan olib keladi va osha malumotni DATABASE ga yozadi!
-    console.log(req.body);
-    res.json({test: "success"});
+     console.log("user enterd /create-item");
+     const new_reja = req.body.reja 
+     db.collection("plans").insertOne({reja: new_reja}, (err, data) => {
+       if(err) {
+        console.log(err);
+        res.end("something went wrong");
+       } else {
+        res.end("successfully added");
+       }
+     });
+
+//   console.log(req.body);
+//   res.json({test: "success"});
 });
 
 // app.get('/master', (req, res) => {
 //  res.render("master", {user: user});
 // });
 
-app.get("/", function(req, res) {    // GET => DATABASE dan malumotni olish yoki oqish uchun ishlatiladi!
-    res.render("reja");
+app.get("/", function(req, res) {
+    console.log("user entered /");
+    db.collection("plans").find().toArray((err, data) => {
+      if(err) {
+        console.log(err);
+        res.end("something went wrong");
+      } else {
+        res.render("reja", {items: data});
+      }
+    });
 });
 
 module.exports = app;    
