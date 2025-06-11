@@ -35,16 +35,18 @@ app.set("view engine", "ejs");
 //  res.end(`<h1>Siz sovgalar bolimidasiz</h1>`);
 // });
 
-app.post("/create-item", (req, res) => {    // POST => Malumotni ozi bilan olib keladi va osha malumotni DATABASE ga yozadi!
-     console.log("user enterd /create-item");
+app.post("/create-item", (req, res) => {          // POST => Malumotni ozi bilan olib keladi va osha malumotni DATABASE ga yozadi!
+     console.log("user entered /create-item");
      const new_reja = req.body.reja 
      db.collection("plans").insertOne({reja: new_reja}, (err, data) => {
-       if(err) {
-        console.log(err);
-        res.end("something went wrong");
-       } else {
-        res.end("successfully added");
-       }
+      console.log(data.ops); 
+      res.json(data.ops[0]);
+//       if(err) {
+//        console.log(err);
+//        res.end("something went wrong");
+//       } else {
+//        res.end("successfully added");
+//       }
      });
 
 //   console.log(req.body);
@@ -68,5 +70,5 @@ app.get("/", function(req, res) {
 });
 
 module.exports = app;    
-       
+        
  
