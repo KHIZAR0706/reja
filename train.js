@@ -1,23 +1,66 @@
 console.log("TRAIN AREA!");
 console.log("***************");
 
+// C-TASK
+// Masalani izohi: Shunday class tuzing nomi Shop, va uni constructoriga 3 xil mahsulot pass bo'lsin, hamda classning 3ta methodi bo'lsin, biri qoldiq, biri sotish, va biri qabul bo'lsin. Har bir method ishga tushgan vaqt ham log qilinsiz.
+// Masalan: const shop = new Shop(4, 5, 2); shop.qoldiq() return hozir 20:40da 4ta non, 5ta lagmon va 2ta cola mavjud! shop.sotish('non', 3) & shop.qabul('cola', 4) & shop.qoldiq() return hozir 20:50da 1ta non, 5ta lagmon va 6ta cola mavjud!
+
+// Masalani yechimi:
+
+class Shop {
+  constructor(pepsi, lemonad, fanta) {
+    this.products = {pepsi,lemonad,fanta};
+  }
+
+  logTime() {
+    return new Date().toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit' });
+  }
+
+  qoldiq() {
+  //  const time = this.logTime();
+    console.log(`Hozir ${this.logTime()}da ${this.products.pepsi}ta pepsi, ${this.products.lemonad}ta lemonad va ${this.products.fanta}ta fanta mavjud!`);
+  }
+
+  sotish( mahsulotTuri, soni) {
+     if (this.products[mahsulotTuri] >= soni) {
+       this.products[mahsulotTuri] -= soni;
+       console.log(`Hozir ${this.logTime()}da ${soni}ta ${mahsulotTuri} sotildi.`);
+    }  else{
+       console.log(`Kechirasiz, hozir yetarli ${mahsulotTuri} yo'q!`);
+      } 
+    }
+  
+  qabul(mahsulotTuri, soni) {
+    this.products[mahsulotTuri] += soni;
+    console.log(`Hozir ${this.logTime()}da ${soni}ta ${mahsulotTuri} qabul qilindi.`);
+  }
+}
+
+const shop = new Shop(9, 6, 4);
+shop.qoldiq();
+shop.sotish('pepsi', 3);
+shop.qabul('fanta', 2);
+shop.qoldiq();
+
+
+
 // B - TASK
 // Masalani izohi: Shunday function tuzing, u 1ta string parametrga ega bolsin, hamda osha stringda qatnashgan raqamlarni sonini bizga return qilsin.
 // Masalan: countDigits("khizar1ab3khu13na07zarov6") 7ni return qiladi.
 
 // Masalani yechimi: 
 
-function countDigits(str) {
-  let count = 0;
-  for (let i = 0; i < str.length; i++) {
-    if (str[i] >= '0' && str[i] <= '9') {
-      count++;
-    }
-  }
-  return count;
-}
+// function countDigits(str) {
+//  let count = 0;
+//  for (let i = 0; i < str.length; i++) {
+//    if (str[i] >= '0' && str[i] <= '9') {
+//      count++;
+//    }
+//  }
+//  return count;
+// }
 
-console.log(countDigits("khizar1ab3khu13na07zarov6"));
+// console.log(countDigits("khizar1ab3khu13na07zarov6"));
 
 
 

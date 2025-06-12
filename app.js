@@ -57,6 +57,19 @@ app.post("/create-item", (req, res) => {          // POST => Malumotni ozi bilan
 //  res.render("master", {user: user});
 // });
 
+app.post("/delete-item", (req, res) => {
+  const id = req.body.id;
+  db.collection("plans").deleteOne(
+    {_id: new mongodb.ObjectId(id)}, 
+    function(err, data) {
+    res.json({state: "success"});
+  }
+);
+
+//  console.log(id);
+  
+});
+
 app.get("/", function(req, res) {
     console.log("user entered /");
     db.collection("plans").find().toArray((err, data) => {
