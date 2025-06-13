@@ -1,46 +1,64 @@
 console.log("TRAIN AREA!");
 console.log("***************");
 
+// D-TASK
+// Masalani izohi: Shunday function tuzing, u 2ta string parametr ega bolsin, hamda agar har ikkala string bir hil harflardan iborat bolsa true aks holda false qaytarsin.
+// Masalan: checkContent("mitgroup", "gmtiprou") return qiladi true;
+
+// Masalani yechimi:
+
+function checkContent(str1, str2) { 
+  return str1.length === str2.length  
+}
+function checkContent(str1, str2) {  
+return str1.split('').sort().join('') === str2.split('').sort().join('');
+}
+
+  console.log(checkContent("mitgroup", "gmtiprou"));
+  console.log(checkContent("dev", "dved"));
+  console.log(checkContent("dev", "ved"));
+  console.log(checkContent("fun", "func"));
+
 // C-TASK
 // Masalani izohi: Shunday class tuzing nomi Shop, va uni constructoriga 3 xil mahsulot pass bo'lsin, hamda classning 3ta methodi bo'lsin, biri qoldiq, biri sotish, va biri qabul bo'lsin. Har bir method ishga tushgan vaqt ham log qilinsiz.
 // Masalan: const shop = new Shop(4, 5, 2); shop.qoldiq() return hozir 20:40da 4ta non, 5ta lagmon va 2ta cola mavjud! shop.sotish('non', 3) & shop.qabul('cola', 4) & shop.qoldiq() return hozir 20:50da 1ta non, 5ta lagmon va 6ta cola mavjud!
 
 // Masalani yechimi:
 
-class Shop {
-  constructor(pepsi, lemonad, fanta) {
-    this.products = {pepsi,lemonad,fanta};
-  }
+// class Shop {
+//   constructor(pepsi, lemonad, fanta) {
+//     this.products = {pepsi,lemonad,fanta};
+//   }
 
-  logTime() {
-    return new Date().toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit' });
-  }
+//   logTime() {
+//     return new Date().toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit' });
+//   }
 
-  qoldiq() {
-  //  const time = this.logTime();
-    console.log(`Hozir ${this.logTime()}da ${this.products.pepsi}ta pepsi, ${this.products.lemonad}ta lemonad va ${this.products.fanta}ta fanta mavjud!`);
-  }
+//   qoldiq() {
+//   //  const time = this.logTime();
+//     console.log(`Hozir ${this.logTime()}da ${this.products.pepsi}ta pepsi, ${this.products.lemonad}ta lemonad va ${this.products.fanta}ta fanta mavjud!`);
+//   }
 
-  sotish( mahsulotTuri, soni) {
-     if (this.products[mahsulotTuri] >= soni) {
-       this.products[mahsulotTuri] -= soni;
-       console.log(`Hozir ${this.logTime()}da ${soni}ta ${mahsulotTuri} sotildi.`);
-    }  else{
-       console.log(`Kechirasiz, hozir yetarli ${mahsulotTuri} yo'q!`);
-      } 
-    }
+//   sotish( mahsulotTuri, soni) {
+//      if (this.products[mahsulotTuri] >= soni) {
+//        this.products[mahsulotTuri] -= soni;
+//        console.log(`Hozir ${this.logTime()}da ${soni}ta ${mahsulotTuri} sotildi.`);
+//     }  else{
+//        console.log(`Kechirasiz, hozir yetarli ${mahsulotTuri} yo'q!`);
+//       } 
+//     }
   
-  qabul(mahsulotTuri, soni) {
-    this.products[mahsulotTuri] += soni;
-    console.log(`Hozir ${this.logTime()}da ${soni}ta ${mahsulotTuri} qabul qilindi.`);
-  }
-}
+//   qabul(mahsulotTuri, soni) {
+//     this.products[mahsulotTuri] += soni;
+//     console.log(`Hozir ${this.logTime()}da ${soni}ta ${mahsulotTuri} qabul qilindi.`);
+//   }
+// }
 
-const shop = new Shop(9, 6, 4);
-shop.qoldiq();
-shop.sotish('pepsi', 3);
-shop.qabul('fanta', 2);
-shop.qoldiq();
+// const shop = new Shop(9, 6, 4);
+// shop.qoldiq();
+// shop.sotish('pepsi', 3);
+// shop.qabul('fanta', 2);
+// shop.qoldiq();
 
 
 
