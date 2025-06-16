@@ -1,23 +1,39 @@
 console.log("TRAIN AREA!");
 console.log("***************");
 
+// E-TASK
+// Masalani izohi: Shunday function tuzing, u bitta string argumentni qabul qilib osha stringni teskari qilib return qilsin.
+// Masalan: getReverse("hello") return qilsin "olleh"
+
+// Masalani yechimi
+
+function getReverse(str) {
+ return str.split('').reverse().join('');
+}
+
+console.log(getReverse("hello"));
+console.log(getReverse("Khizar"));
+console.log(getReverse("developer"));
+console.log(getReverse("MIT"));
+
+
 // D-TASK
 // Masalani izohi: Shunday function tuzing, u 2ta string parametr ega bolsin, hamda agar har ikkala string bir hil harflardan iborat bolsa true aks holda false qaytarsin.
 // Masalan: checkContent("mitgroup", "gmtiprou") return qiladi true;
 
 // Masalani yechimi:
 
-function checkContent(str1, str2) { 
-  return str1.length === str2.length  
-}
-function checkContent(str1, str2) {  
-return str1.split('').sort().join('') === str2.split('').sort().join('');
-}
+// function checkContent(str1, str2) { 
+//   return str1.length === str2.length  
+// }
+// function checkContent(str1, str2) {  
+// return str1.split('').sort().join('') === str2.split('').sort().join('');
+// }
 
-  console.log(checkContent("mitgroup", "gmtiprou"));
-  console.log(checkContent("dev", "dved"));
-  console.log(checkContent("dev", "ved"));
-  console.log(checkContent("fun", "func"));
+//   console.log(checkContent("mitgroup", "gmtiprou"));
+//   console.log(checkContent("dev", "dved"));
+//   console.log(checkContent("dev", "ved"));
+//   console.log(checkContent("fun", "func"));
 
 // C-TASK
 // Masalani izohi: Shunday class tuzing nomi Shop, va uni constructoriga 3 xil mahsulot pass bo'lsin, hamda classning 3ta methodi bo'lsin, biri qoldiq, biri sotish, va biri qabul bo'lsin. Har bir method ishga tushgan vaqt ham log qilinsiz.
