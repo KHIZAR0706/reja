@@ -1,20 +1,44 @@
 console.log("TRAIN AREA!");
 console.log("***************");
 
+// F-TASK
+// Masalani izohi: Yagona string argumentga ega findDoublers nomli function tuzingAgar stringda bittadan ortiq bir xil harflar ishtirok etgan bo'lsatrue yokida false natija qaytarsin.
+// Masalan: findDoublers("hello"); natija true qaytadi. Sababi ikki marotaba takrorlangan 'll' harfi mavjud.
+
+// Masalani yechimi: 
+
+function findDoublers(str)  {
+    for(let i = 0; i < str.length; i++) {
+        if(str.indexOf(str[i], i + 1) !== -1) {
+            return true;
+        }
+    }
+    return false;
+}
+
+console.log(findDoublers("food"));
+console.log(findDoublers("dinner"));
+console.log(findDoublers("button"));
+console.log(findDoublers("task"));
+console.log(findDoublers("challenge"));
+console.log(findDoublers("success"));
+console.log(findDoublers("world"));
+
+
 // E-TASK
 // Masalani izohi: Shunday function tuzing, u bitta string argumentni qabul qilib osha stringni teskari qilib return qilsin.
 // Masalan: getReverse("hello") return qilsin "olleh"
 
 // Masalani yechimi
 
-function getReverse(str) {
- return str.split('').reverse().join('');
-}
+// function getReverse(str) {
+//  return str.split('').reverse().join('');
+// }
 
-console.log(getReverse("hello"));
-console.log(getReverse("Khizar"));
-console.log(getReverse("developer"));
-console.log(getReverse("MIT"));
+// console.log(getReverse("hello"));
+// console.log(getReverse("Khizar"));
+// console.log(getReverse("developer"));
+// console.log(getReverse("MIT"));
 
 
 // D-TASK
